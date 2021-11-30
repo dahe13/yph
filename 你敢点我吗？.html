@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机换肤功能</title>
+    <style>
+        *,
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .btn {
+            width: 200px;
+            margin: 60px auto;
+            font-size: 20px;
+            line-height: 40px;
+            font-weight: bold;
+            color: #ffffff;
+            background: #706005;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="javascript:" class="btn">你敢点我吗？</a>
+    <script>
+        function getRandom(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值
+        }
+        var btn = document.querySelector(".btn");
+        btn.onclick = function() {
+            // document.body.style.background = 'rgb(' + getRandom(0, 255) + ',' + getRandom(0, 255) + ',' + getRandom(0, 255) + ')';
+            setInterval(() => {
+                document.body.style.background = 'rgb(' + getRandom(0, 255) + ',' + getRandom(0, 255) + ',' + getRandom(0, 255) + ')';
+            }, 200);
+        }
+    </script>
+</body>
+
+</html>
